@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/static/css/main.1a3ce28a.css",
+    "main.js": "/static/js/main.99a3a948.js",
+    "static/js/787.749b4a44.chunk.js": "/static/js/787.749b4a44.chunk.js",
+    "static/media/K_12.png": "/static/media/K_12.4e0b07fa675f1635c885.png",
+    "static/media/SrishtiPalaniPhoto.png": "/static/media/SrishtiPalaniPhoto.a5630c18a105cc024fc0.png",
+    "static/media/k_12_2.png": "/static/media/k_12_2.ba73725f429f818028b2.png",
+    "static/media/K_12_4.png": "/static/media/K_12_4.72470c666381cbe01d90.png",
+    "static/media/K_12_1.png": "/static/media/K_12_1.89bc1834c7d8c362a5fc.png",
+    "static/media/GWC_classroom.jpg": "/static/media/GWC_classroom.97136e3363267d392bd3.jpg",
+    "static/media/GenAICourse.png": "/static/media/GenAICourse.f751732d0de04175368d.png",
+    "static/media/AssistiveWearable.png": "/static/media/AssistiveWearable.8baa37bc5e138c0d883c.png",
+    "static/media/GWC.jpg": "/static/media/GWC.ef63bb513981ffbd08ac.jpg",
+    "static/media/HackHolyoke.jpeg": "/static/media/HackHolyoke.ddd87db73562fb8333f5.jpeg",
+    "static/media/GIT.jpg": "/static/media/GIT.3c9b18b0c20c550f5fe0.jpg",
+    "static/media/InterWeave.png": "/static/media/InterWeave.23ebde0d78feb6895c8d.png",
+    "static/media/PractitionerValueFramework.jpeg": "/static/media/PractitionerValueFramework.330e723402332fd1413f.jpeg",
+    "static/media/CoNotateImg.png": "/static/media/CoNotateImg.ae6d159cabf18481c0b6.png",
+    "static/media/ActiveSearch.png": "/static/media/ActiveSearch.22d115ca1688767d96a6.png",
+    "static/media/SrishtiPalaniPronunciation.mp3": "/static/media/SrishtiPalaniPronunciation.bb1cfbc3b9b41c2297a0.mp3",
+    "static/media/SrishtiPalaniName.png": "/static/media/SrishtiPalaniName.4e85110d2fe4ba1cb0d8.png",
+    "static/media/Eyetracking_Dyslexia.jpeg": "/static/media/Eyetracking_Dyslexia.938eaa208dadc723bc61.jpeg",
+    "index.html": "/index.html",
+    "main.1a3ce28a.css.map": "/static/css/main.1a3ce28a.css.map",
+    "main.99a3a948.js.map": "/static/js/main.99a3a948.js.map",
+    "787.749b4a44.chunk.js.map": "/static/js/787.749b4a44.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1a3ce28a.css",
+    "static/js/main.99a3a948.js"
+  ]
+}
