@@ -202,11 +202,11 @@ nav a.no-underline img {
     box-shadow: 0 1px 3px rgba(59, 138, 217, 0.12) !important;
     margin: 0 !important;
     line-height: 1.2 !important;
-    cursor: pointer !important;
+    /* cursor: pointer !important; */
     transition: all 0.3s ease !important;
     position: relative !important;
     z-index: 10 !important;
-    pointer-events: auto !important;
+    /* pointer-events: auto !important; */
 }
 
 /* Minimal cute hover - just a gentle lift and color change */
