@@ -16,6 +16,8 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+
+    
     
     <!-- INLINE CSS FOR BADGES - WILL DEFINITELY WORK -->
     <style>
@@ -173,6 +175,76 @@
             transform: translateY(-2px) scale(1.05) !important;
             box-shadow: 0 4px 12px rgba(59, 138, 217, 0.3) !important;
             z-index: 20 !important;
+        }
+
+        /* ===== RESPONSIVE STYLES ===== */
+        
+        /* Tablets (max-width: 1024px) */
+        @media (max-width: 1024px) {
+            .aspect-video {
+                height: 260px !important;
+                min-height: 260px !important;
+                max-height: 260px !important;
+            }
+            
+            .card-1, .card-2, .card-alt-1, .card-alt-2 {
+                transform: scale(0.95) !important;
+            }
+            
+            .card-1:hover, .card-2:hover, .card-alt-1:hover, .card-alt-2:hover {
+                transform: scale(0.97) translateY(-6px) !important;
+            }
+        }
+        
+        /* Mobile (max-width: 768px) */
+        @media (max-width: 768px) {
+            .card-1:hover,
+            .card-2:hover,
+            .card-alt-1:hover,
+            .card-alt-2:hover {
+                transform: translateY(-8px) !important;
+            }
+            
+            .aspect-video {
+                height: 220px !important;
+                min-height: 220px !important;
+                max-height: 220px !important;
+            }
+            
+            .card-1, .card-2, .card-alt-1, .card-alt-2 {
+                transform: scale(1) !important;
+            }
+            
+            .badge {
+                font-size: 10px !important;
+                padding: 3px 8px !important;
+            }
+            
+            .badge-container {
+                gap: 3px !important;
+            }
+        }
+        
+        /* Small Mobile (max-width: 480px) */
+        @media (max-width: 480px) {
+            .aspect-video {
+                height: 180px !important;
+                min-height: 180px !important;
+                max-height: 180px !important;
+            }
+            
+            .card-1 h3, .card-2 h3, .card-alt-1 h3, .card-alt-2 h3 {
+                font-size: 14px !important;
+            }
+            
+            .card-1 p, .card-2 p, .card-alt-1 p, .card-alt-2 p {
+                font-size: 13px !important;
+            }
+            
+            .badge {
+                font-size: 9px !important;
+                padding: 2px 6px !important;
+            }
         }
     </style>
     
@@ -700,6 +772,23 @@ Alemitu Bezabih, <strong>Shadi Nourriz</strong>, Anne-Marie Snider, Rosalie Raue
                 behavior: 'smooth'
             });
         });
+
+    // Make all external links open in new tab
+    window.addEventListener('load', function() {
+        // Get all links
+        const links = document.querySelectorAll('a[href]');
+        
+        links.forEach(function(link) {
+            const href = link.getAttribute('href');
+            
+            // Check if it's an external link (starts with http/https)
+            if (href && (href.startsWith('http://') || href.startsWith('https://'))) {
+                link.setAttribute('target', '_blank');
+                link.setAttribute('rel', 'noopener noreferrer');
+            }
+        });
+    });
+</script>
     </script>
 </body>
 </html>
