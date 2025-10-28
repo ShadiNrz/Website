@@ -79,24 +79,42 @@ window.addEventListener('load', function() {
     });
 });
 
-// ===== Active Navigation =====
-window.addEventListener('scroll', function() {
+// ===== Active Navigation - PERFECT FIX =====
+function updateActiveLink() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('nav a[href^="#"]');
     
     let current = '';
     
-    sections.forEach(function(section) {
-        const sectionTop = section.offsetTop;
-        if (window.pageYOffset >= (sectionTop - 200)) {
-            current = section.getAttribute('id');
-        }
-    });
+    // Check if at the TOP of page (or just refreshed)
+    if (window.pageYOffset < 100) {
+        current = 'about';
+    }
+    // Check if at the BOTTOM of page
+    else if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 50) {
+        current = 'contact';
+    }
+    // Otherwise, check which section we're in
+    else {
+        sections.forEach(function(section) {
+            const sectionTop = section.offsetTop;
+            if (window.pageYOffset >= (sectionTop - 200)) {
+                current = section.getAttribute('id');
+            }
+        });
+    }
     
+    // Update active link
     navLinks.forEach(function(link) {
         link.classList.remove('active-link');
         if (link.getAttribute('href') === '#' + current) {
             link.classList.add('active-link');
         }
     });
-});
+}
+
+// Run on scroll
+window.addEventListener('scroll', updateActiveLink);
+
+// Run on page load to show "About Me" active immediately
+window.addEventListener('load', updateActiveLink);
