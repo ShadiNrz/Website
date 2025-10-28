@@ -1,0 +1,351 @@
+/* =================================
+   Custom CSS for Shadi Nourriz Portfolio
+   MINIMAL CUTE VERSION 🎀
+   ================================= */
+
+/* ===== Font Families ===== */
+* {
+    font-family: 'Comfortaa', Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Comfortaa', Arial, sans-serif;
+    font-weight: 700;
+}
+
+/* ===== Base Font Size ===== */
+html {
+    font-size: 16px;
+}
+
+/* ===== Gradient Text ===== */
+.gradient-text {
+    background: linear-gradient(135deg, #1c4587 0%, #3b8ad9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ===== Smooth Transitions ===== */
+* {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== Custom Scrollbar ===== */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f8f9fa;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #667eea;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #1c4587;
+}
+
+/* ===== Active Navigation Link with Yellow Underline ===== */
+nav a[href^="#"] {
+    position: relative;
+    display: inline-block;
+    font-size: 16px;
+}
+
+nav a[href^="#"]::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: #FFC107;
+    transition: width 0.3s ease;
+}
+
+nav a[href^="#"].active-link::after {
+    width: 100%;
+}
+
+nav a[href^="#"].active-link {
+    color: #111827 !important;
+    font-weight: 600;
+}
+
+/* Don't add underline to contact button */
+nav a.rounded-full::after {
+    display: none;
+}
+
+/* Don't add underline to logo link */
+nav a.no-underline::after,
+nav a img::after,
+nav a:has(img)::after {
+    display: none;
+}
+
+/* ===== Logo Alignment ===== */
+nav a.no-underline {
+    margin-left: -35px !important;
+    padding-left: 0 !important;
+}
+
+nav a.no-underline img {
+    margin-left: 0 !important;
+    display: block;
+}
+
+/* ===== FIXED: Image Heights (320px tall) ===== */
+.aspect-video {
+    height: 320px !important;
+    min-height: 320px !important;
+    max-height: 320px !important;
+    border-bottom: 1px solid #e5e7eb !important;
+}
+
+.aspect-video img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+}
+
+/* ===== FIXED: Shorter Title Height ===== */
+.card-1 h3, .card-2 h3, .card-alt-1 h3, .card-alt-2 h3 {
+    font-size: 17px !important;
+    line-height: 1.2 !important;
+    margin-bottom: 10px !important;
+    font-weight: 700 !important;
+}
+
+/* ===== EACH CARD GETS COLOR FROM NEW GRADIENT ===== */
+.card-1, .card-2, .card-alt-1, .card-alt-2 {
+    border-top: 4px solid !important;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    position: relative !important;
+    border-radius: 1rem !important;
+    overflow: hidden !important;
+}
+
+/* Card 1 - Darkest Blue from gradient start */
+.card-1 {
+    border-top-color: #1a6176 !important;
+}
+
+/* Card 2 - Mid Blue (blend of both) */
+.card-2 {
+    border-top-color:  #1c4587 !important;
+}
+
+/* Card 3 - Light Mid Blue */
+.card-alt-2 {
+    border-top-color: #db6834 !important;
+}
+
+/* Card 4 - Lightest Blue from gradient end */
+.card-alt-1 {
+    border-top-color: #efb006 !important;
+}
+
+/* ===== ALL CARDS USE GRADIENT HOVER EFFECT ===== */
+.card-1::after, .card-2::after, .card-alt-1::after, .card-alt-2::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 1rem;
+    padding: 2px;
+    background: linear-gradient(135deg, #1c4587, #3b8ad9);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.card-1:hover::after, .card-2:hover::after, .card-alt-1:hover::after, .card-alt-2:hover::after {
+    opacity: 1;
+}
+
+.card-1:hover, .card-2:hover, .card-alt-1:hover, .card-alt-2:hover {
+    transform: translateY(-12px) rotate(-1deg) !important;
+    box-shadow: 0 25px 50px -12px rgba(28, 69, 135, 0.25) !important;
+    border-top-width: 6px !important;
+}
+
+/* ===== Image Hover Zoom Effect ===== */
+.img-hover {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.card-1:hover .img-hover,
+.card-2:hover .img-hover,
+.card-alt-1:hover .img-hover,
+.card-alt-2:hover .img-hover {
+    transform: scale(1.05) !important;
+}
+
+/* ===== MINIMAL CUTE Badge Hover 🎀 ===== */
+.badge {
+    display: inline-block !important;
+    padding: 5px 12px !important;
+    background: #ffffff !important;
+    color: #1f55ab !important;
+    border-radius: 16px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0px !important;
+    white-space: nowrap !important;
+    border: 2px solid #3b8ad9 !important;
+    box-shadow: 0 1px 3px rgba(59, 138, 217, 0.12) !important;
+    margin: 0 !important;
+    line-height: 1.2 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    z-index: 10 !important;
+    pointer-events: auto !important;
+}
+
+/* Minimal cute hover - just a gentle lift and color change */
+.badge:hover {
+    background: linear-gradient(135deg, #1c4587 0%, #2563eb 100%) !important;
+    color: white !important;
+    border-color: #3b8ad9 !important;
+    transform: translateY(-2px) scale(1.05) !important;
+    box-shadow: 0 4px 12px rgba(59, 138, 217, 0.3) !important;
+    z-index: 20 !important;
+}
+
+/* Remove any Tailwind border overrides */
+.badge[class*="border"] {
+    border: 2px solid #3b8ad9 !important;
+}
+
+.badge:hover[class*="border"] {
+    border: 2px solid #3b8ad9 !important;
+}
+
+/* ===== FIXED: Compact Badge Container ===== */
+.badge-container {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 5px !important;
+    margin-bottom: 12px !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    max-width: 100% !important;
+    padding-bottom: 12px !important;
+    border-bottom: 1px solid #e5e7eb !important;
+    position: relative !important;
+    z-index: 10 !important;
+}
+
+/* ===== Read More Button - HIDDEN ===== */
+.read-more-btn {
+    display: none !important;
+}
+
+/* ===== Card Height Uniformity ===== */
+.research-card-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.research-card-description {
+    flex-grow: 1;
+    overflow: visible;
+    text-overflow: clip;
+    margin-top: 12px !important;
+    /* Show ALL text - no clipping */
+}
+
+/* ===== Fade In Animation ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeInUp {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+/* ===== Animation Delays ===== */
+.delay-100 { 
+    animation-delay: 0.1s; 
+}
+
+.delay-200 { 
+    animation-delay: 0.2s; 
+}
+
+.delay-300 { 
+    animation-delay: 0.3s; 
+}
+
+/* ===== Social Icon Hover Effect ===== */
+.social-icon {
+    position: relative;
+    overflow: hidden;
+}
+
+.social-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1c4587 0%, #3b8ad9 100%);
+    transition: left 0.3s ease;
+    z-index: -1;
+}
+
+.social-icon:hover::before {
+    left: 0;
+}
+
+.social-icon:hover {
+    color: white !important;
+}
+
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 768px) {
+    .card-1:hover,
+    .card-2:hover,
+    .card-alt-1:hover,
+    .card-alt-2:hover {
+        transform: translateY(-8px);
+    }
+    
+    .aspect-video {
+        height: 240px !important;
+        min-height: 240px !important;
+        max-height: 240px !important;
+    }
+}
+
+/* ===== Print Styles ===== */
+@media print {
+    nav,
+    footer {
+        display: none;
+    }
+    
+    .card-1,
+    .card-2,
+    .card-alt-1,
+    .card-alt-2 {
+        page-break-inside: avoid;
+    }
+}

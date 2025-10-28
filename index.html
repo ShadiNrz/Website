@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadi Nourriz - HCI Researcher</title>
+    <meta name="description" content="Portfolio of Shadi Nourriz - Human-Computer Interaction Researcher">
+    
+    <!-- Google Fonts - Comfortaa -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- INLINE CSS FOR BADGES - WILL DEFINITELY WORK -->
+    <style>
+        /* SCALED DOWN IMAGES - BIGGER SIZE */
+        .aspect-video {
+            height: 260px !important;
+            min-height: 260px !important;
+            max-height: 260px !important;
+            overflow: hidden !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+        
+        .aspect-video img {
+            width: 95% !important;
+            height: 95% !important;
+            object-fit: contain !important;
+            transform: scale(0.95) !important;
+        }
+        
+        /* SMALLER TITLES */
+        .card-1 h3, .card-2 h3, .card-alt-1 h3, .card-alt-2 h3 {
+            font-size: 15px !important;
+            line-height: 1.2 !important;
+            margin-bottom: 6px !important;
+        }
+        
+        /* Description text with different font family */
+        .card-1 p, .card-2 p, .card-alt-1 p, .card-alt-2 p {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif !important;
+            font-size: 15px !important;
+            line-height: 1.6 !important;
+            color: #374151 !important;
+            font-weight: 400 !important;
+        }
+        
+        /* SMALLER CARDS WITH REDUCED PADDING */
+        .card-1, .card-2, .card-alt-1, .card-alt-2 {
+            /* border-top: 4px solid #3b8ad9 !important; */
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            position: relative !important;
+            transform: scale(0.9) !important;
+        }
+        
+        /* Reduce padding inside cards */
+        .card-1 > div, .card-2 > div, .card-alt-1 > div, .card-alt-2 > div {
+            padding: 12px !important;
+        }
+        
+        /* Different colors for each card */
+        /* .card-1 {
+            border-top-color: #3b8ad9 !important;
+        }
+        
+        .card-2 {
+            border-top-color: #5bc0de !important;
+        }
+        
+        .card-alt-1 {
+            border-top-color: #9b59b6 !important;
+        }
+        
+        .card-alt-2 {
+            border-top-color: #3498db !important;
+        } */
+        
+        /* SAME BEAUTIFUL HOVER FOR ALL CARDS (like card 2) */
+        .card-1:hover, .card-2:hover, .card-alt-1:hover, .card-alt-2:hover {
+            transform: scale(0.92) translateY(-8px) !important;
+            box-shadow: 0 20px 40px rgba(8, 145, 178, 0.2) !important;
+            border-top-width: 6px !important;
+            user-select: text !important;
+    cursor: text !important;
+            /* border-top-color: #0891b2 !important; */
+        }
+        
+        /* Image hover zoom effect */
+        .aspect-video img {
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        }
+        
+        .card-1:hover .aspect-video img,
+        .card-2:hover .aspect-video img,
+        .card-alt-1:hover .aspect-video img,
+        .card-alt-2:hover .aspect-video img {
+            transform: scale(1.0) !important;
+        }
+        
+        /* SMALLER BADGES - WITH INDEPENDENT HOVER */
+        .badge {
+            display: inline-block !important;
+            padding: 4px 10px !important;
+            background: #ffffff !important;
+            color: #1f55ab !important;
+            border-radius: 14px !important;
+            font-size: 11px !important;
+            font-weight: 600 !important;
+            letter-spacing: 0px !important;
+            transition: all 0.3s ease !important;
+            white-space: nowrap !important;
+            border: 2px solid #3b8ad9 !important;
+            box-shadow: 0 1px 3px rgba(59, 138, 217, 0.12) !important;
+            margin: 0 !important;
+            line-height: 1.2 !important;
+            cursor: pointer !important;
+            position: relative !important;
+            z-index: 10 !important;
+            pointer-events: auto !important;
+        }
+
+        .badge-container {
+            display: flex !important;
+            flex-wrap: wrap !important;
+            gap: 4px !important;
+            margin-bottom: 8px !important;
+            align-items: flex-start !important;
+            justify-content: flex-start !important;
+            max-width: 100% !important;
+            position: relative !important;
+            z-index: 10 !important;
+        }
+
+        /* ===== MINIMAL CUTE HOVER EFFECT ===== */
+        .badge:hover {
+            background: linear-gradient(135deg, #1c4587 0%, #2563eb 100%) !important;
+            color: white !important;
+            border-color: #3b8ad9 !important;
+            transform: translateY(-2px) scale(1.05) !important;
+            box-shadow: 0 4px 12px rgba(59, 138, 217, 0.3) !important;
+            z-index: 20 !important;
+        }
+    </style>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b8ad9',
+                        secondary: '#1c4587',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-gray-900">
+    
+    <!-- Minimal Navigation -->
+    <nav class="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#about" class="hover:opacity-80 transition-opacity no-underline">
+                    <img src="static/media/logo2.png" alt="Shadi Nourriz Logo" class="h-48 w-auto">
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-12">
+                    <a href="#about" class="text-sm font-medium text-gray-600 hover:text-gray-900">About Me</a>
+                    <a href="#research" class="text-sm font-medium text-gray-600 hover:text-gray-900">Research</a>
+                    <a href="#publications" class="text-sm font-medium text-gray-600 hover:text-gray-900">Publications</a>
+                    <a href="#contact" class="text-sm font-medium text-gray-600 hover:text-gray-900">Contact</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-btn" class="md:hidden text-gray-900">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="px-6 py-6 space-y-4">
+                <a href="#about" class="block text-gray-600 hover:text-gray-900 font-medium">About Me</a>
+                <a href="#research" class="block text-gray-600 hover:text-gray-900 font-medium">Research</a>
+                <a href="#publications" class="block text-gray-600 hover:text-gray-900 font-medium">Publications</a>
+                <a href="#contact" class="block text-gray-600 hover:text-gray-900 font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Combined Hero & About Section -->
+    <section id="about" class="min-h-screen flex items-center pt-20">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 py-16">
+            <!-- Top Row: Photo + Name + Job Title -->
+            <div class="grid lg:grid-cols-12 gap-12 items-start mb-6">
+                <!-- Left: Circular Photo -->
+                <div class="lg:col-span-2 order-1">
+                    <div class="relative w-48 h-48 mx-auto">
+                        <div class="w-full h-full rounded-full overflow-hidden bg-gray-200 shadow-lg">
+                            <img src="static/media/Shadii.jpeg" 
+                                 alt="Shadi Nourriz" 
+                                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Middle: Name + Social Icons -->
+                <div class="lg:col-span-7 order-2">
+                    <div class="animate-fadeInUp opacity-0">
+                        <h1 class="text-2xl md:text-2xl font-normal mb-3 text-gray-800">
+                            Hello World!
+                        </h1>
+                        <h2 class="text-3xl md:text-3xl lg:text-4xl font-bold mb-6 leading-tight text-gray-900">
+                            I'm <span class="gradient-text">Shadi Nourriz!</span>
+                        </h2>
+                    </div>
+                    
+                    <div class="animate-fadeInUp opacity-0 delay-100">
+                        <div class="flex gap-5 items-center">
+                            <a href="mailto:shadinourriz@mines.edu" class="text-gray-800 hover:text-primary text-2xl transition-colors">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="https://scholar.google.com/citations?user=-Ar3UQ4AAAAJ&hl=en" class="text-gray-800 hover:text-primary text-2xl transition-colors">
+                                <i class="fas fa-graduation-cap"></i>
+                            </a>
+                            <a href="https://x.com/ShadiNrz" class="text-gray-800 hover:text-primary text-2xl transition-colors">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://github.com/ShadiNrz" class="text-gray-800 hover:text-primary text-2xl transition-colors">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/shadi-nourriz/" class="text-gray-800 hover:text-primary text-2xl transition-colors">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right: Job Title -->
+                <div class="lg:col-span-3 order-3">
+                    <div class="animate-fadeInUp opacity-0 delay-100 text-right">
+                        <h3 class="text-xl md:text-xl font-bold text-gray-900 mb-2">
+                            PhD Candidate
+                        </h3>
+                        <p class="text-sm gradient-text mt-2">
+                            Human-Computer Interaction
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Divider Line -->
+            <div class="border-t border-gray-200 mb-6"></div>
+            
+            <!-- Bottom: Full Width Bio Text -->
+            <div class="animate-fadeInUp opacity-0 delay-200">
+                <div class="space-y-6 text-base md:text-md text-gray-800 leading-relaxed text-justify">
+                    <p>
+                        I'm a Ph.D. candidate in Computer Science with research focus on Human–Computer Interaction (HCI) at the Colorado School of Mines, where I study how technology can strengthen human connection, trust, and well-being in online environments. My research bridges social computing, human–AI interaction, and digital governance, exploring how intelligent systems can better support the social and emotional dimensions of online community life.
+                    </p>
+                    <p>
+                        My work examines how people build trust, navigate conflict, and sustain care in online spaces, advancing socio-technical frameworks and computational models that inform the responsible design and governance of AI-mediated communities.
+                    </p>
+                    <p>
+                        Broadly, I'm driven by the belief that technology should expand—not erode—our capacity for understanding and connection. My goal is to help shape human-centered AI systems and infrastructures that reflect the ethical, social, and emotional complexity of the communities they serve—aligning innovation with care, responsibility, and human impact.
+                    </p>
+                </div>
+                
+                <div class="mt-8">
+                    <a href="https://drive.google.com/file/d/1nMDw0ERN3SRSxjx-3etRMQXpYIDeL9Ei/view" class="px-7 py-3.5 bg-black text-white rounded-full font-medium hover:bg-gray-800 inline-flex items-center gap-2 text-sm">
+                        See My CV
+                        <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="mb-8">
+                <h2 class="text-3xl md:text-3xl font-bold mb-5">
+                    Research Projects
+                    <!-- <span class="gradient-text">&</span> Projects -->
+                </h2>
+                <!-- <p class="text-lg text-gray-600 max-w-2xl">
+                    Exploring the frontiers of human-computer interaction
+                </p> -->
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Research Card 1 -->
+                <div class="card-1 bg-white rounded-2xl overflow-hidden border border-gray-100 flex flex-col">
+                    <div class="p-7 pb-4">
+                        <h3 class="text-xl font-bold mb-4">Spiritual Care in Online Communities</h3>
+                    </div>
+                    <div class="aspect-video overflow-hidden bg-gray-100">
+                        <img src="static/media/research1.png" 
+                             alt="Spiritual Care" 
+                             class="img-hover w-full h-full object-cover">
+                    </div>
+                    <div class="p-7 pt-5 flex-grow research-card-content">
+                        <!-- Keywords with inline styles -->
+                        <div class="badge-container">
+                            <span class="badge">Design Research</span>
+                            <span class="badge">Co-Design Workshops</span>
+                            <span class="badge">User Testing Sessions</span>
+                            <span class="badge">Interviews</span>
+                            <span class="badge">Grounded Theory Methodology</span>
+                            <span class="badge">Thematic Analysis</span>
+                            <span class="badge">Affinity Mapping</span>
+                            <span class="badge">Qualitative Research</span>
+                        </div>
+                        <p class="text-gray-900 leading-relaxed text-md research-card-description">
+In a time when many seek meaning, comfort, and connection online, this multi-phase research project explores how digital communities can be intentionally designed to support spiritual care. Through in-depth interviews, grounded theory analysis, national survey research, and co-design workshops with professional spiritual-care providers, we investigated how spiritual care principles can inform the design of online environments for reflection, healing, and relational connection.                        </p>
+                        <span class="read-more-btn">Read more →</span>
+                    </div>
+                </div>
+                
+                <!-- Research Card 2 -->
+                <div class="card-2 bg-white rounded-2xl overflow-hidden border border-gray-100 flex flex-col">
+                    <div class="p-7 pb-4">
+                        <h3 class="text-xl font-bold mb-4">Governance Bot</h3>
+                    </div>
+                    <div class="aspect-video overflow-hidden bg-gray-100">
+                        <img src="static/media/research2.png" 
+                             alt="Governance Bot" 
+                             class="img-hover w-full h-full object-cover">
+                    </div>
+                    <div class="p-7 pt-5 flex-grow research-card-content">
+                        <div class="badge-container">
+                            <span class="badge">Human–AI Collaboration</span>
+                            <span class="badge">Conflict & Controversy Prediction</span>
+                            <span class="badge">Community Wellbeing & Digital Safety</span>
+                            <span class="badge">Machine Learning Integration</span>
+                            <span class="badge">Toxicity & Sentiment Analysis</span>
+                            <span class="badge">Moderation Dashboard Design</span>
+                        </div>
+                        <p class="text-gray-900 leading-relaxed text-md research-card-description">
+Conflict in online communities and social media happens all the time—often escalating before moderators can intervene. This project addresses that challenge by developing AI-assisted tools that help communities recognize potential conflict early and support more restorative forms of governance.
+The Governance Bot analyzes Reddit posts and comment threads using machine-learning models trained on toxicity, controversy, and polarity signals to predict the likelihood of conflict. These predictions are transformed into interpretable vibe scores, visualized through a moderation dashboard that helps moderators reflect on tone, and managing risks within discussions.                        </p>
+                        <span class="read-more-btn">Read more →</span>
+                    </div>
+                </div>
+
+                <!-- Research Card 3 -->
+                <div class="card-alt-2 bg-white overflow-hidden border border-gray-100 flex flex-col">
+                    <div class="p-7 pb-4">
+                        <h3 class="text-xl font-bold mb-4">Community-Centered AI Reddit Bot</h3>
+                    </div>
+                    <div class="aspect-video overflow-hidden bg-gray-100">
+                        <img src="static/media/research6.png" 
+                             alt="CSSpark Bot" 
+                             class="img-hover w-full h-full object-cover">
+                    </div>
+                    <div class="p-7 pt-5 flex-grow research-card-content">
+                        <div class="badge-container">
+                            <span class="badge">Community-Centered Design</span>
+                            <span class="badge">Empirical Studies</span>
+                            <span class="badge">Human-AI Interaction</span>
+                            <span class="badge">Predictive Modeling</span>
+                            <span class="badge">Machine Learning Integration</span>
+                            <span class="badge">Contextual Inquiry</span>
+                            <span class="badge">AI-Driven Recommendations</span>
+                            <span class="badge">Ethical & Transparent AI Designn</span>
+                        </div>
+                        <p class="text-gray-900 leading-relaxed text-md research-card-description">
+This two-phase project explores how community-centered design and human–AI interaction can enhance engagement and knowledge-sharing in academic online spaces.
+Working with the r/CompSocial community, we co-designed and deployed CSSpark_Bot, a Reddit bot built to strengthen multi-user discussion and surface relevant research.
+In Phase 1, the bot offered keyword-based subscriptions and “ping” alerts.
+In Phase 2, community members chose to evolve it into an AI-powered paper recommender. Using a machine learning model trained on an HCI arXiv dataset, it recommends the top three recent papers based on each post’s keywords—displaying the title, authors, venue, summary, and DOI link to spark richer scholarly dialogue.     <span class="read-more-btn">Read more →</span>
+                    </div>
+                </div>
+                
+                <!-- Research Card 4 -->
+                <div class="card-alt-1 bg-white overflow-hidden border border-gray-100 flex flex-col">
+                    <div class="p-7 pb-4">
+                        <h3 class="text-xl font-bold mb-4">Mental Models of Privacy and Security</h3>
+                    </div>
+                    <div class="aspect-video overflow-hidden bg-gray-100">
+                        <img src="static/media/research3.png" 
+                             alt="Privacy Research" 
+                             class="img-hover w-full h-full object-cover">
+                    </div>
+                    <div class="p-7 pt-5 flex-grow research-card-content">
+                        <div class="badge-container">
+                            <span class="badge">Scenario-Based Research</span>
+                            <span class="badge">User Interviews</span>
+                            <span class="badge">Qualitative Data Analysis</span>
+                            <span class="badge">Research Design & Protocol Development</span>
+                            <span class="badge">Thematic Analysis</span>
+                            <span class="badge">User Perceptions of Risk and Safety</span>
+                            <span class="badge">Mental Models of Computer Security</span>
+                        </div>
+                        <p class="text-gray-900 leading-relaxed text-md research-card-description">
+This study investigates how people understand and respond to digital security threats in everyday life. Through interview-based qualitative research, our team explored how users think about hacking, privacy, and data protection across computers, smartphones, and IoT devices.
+
+The project focused on uncovering how mental models have evolved over time and what misconceptions still persist. Insights from our analysis inform human-centered approaches to cybersecurity design, helping bridge the gap between technical systems and user understanding.
+                        </p>
+                        <span class="read-more-btn">Read more →</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="mb-8">
+                <h2 class="text-3xl md:text-3xl font-bold mb-5">
+                    Publications
+                </h2>
+            </div>
+            
+            <div class="space-y-3">
+                <!-- Publication 1 -->
+                <div class="bg-gray-50 rounded-lg p-4 hover:bg-blue-50 transition-all duration-300 border-l-4 border-blue-500">
+                    <p class="text-gray-800 text-sm leading-relaxed">
+<strong>Shadi Nourriz</strong>, Rui Zhang, and C. Estelle Smith. Stay Ahead: Designing a Community-
+Driven, AI-Powered Bot for Predicting Academic Paper Impact and Enhancing Multi-
+User Engagement. Poster Paper at the Collective Intelligence (CI) Conference. La Jolla, California. August 2025.                        
+<em><strong>CI 2025.</strong></em>
+                    </p>
+                                        <a href="https://ci.acm.org/2025/wp-content/uploads/99-Nourriz.pdf" class="text-blue-600 hover:text-blue-800 text-sm font-medium">📄 ACM DL</a>
+
+                </div>
+
+                <!-- Publication 2 -->
+                <div class="bg-gray-50 rounded-lg p-4 hover:bg-cyan-50 transition-all duration-300 border-l-4 border-cyan-500">
+                    <p class="text-gray-800 text-sm leading-relaxed mb-1">
+Alemitu Bezabih, <strong>Shadi Nourriz</strong>, Anne-Marie Snider, Rosalie Rauenzahn, George Handzo, and C. Estelle Smith. Meeting Patients Where They’re At: Toward the Expansion of Professional Chaplaincy Care into Online Spiritual Care Communities.
+                        <em><strong>CSCW 2025.</strong></em>
+                    </p>
+                    <a href="https://dl.acm.org/doi/10.1145/3757492" class="text-blue-600 hover:text-blue-800 text-sm font-medium">📄 ACM DL</a>
+                </div>
+
+                <!-- Publication 3 -->
+                <div class="bg-gray-50 rounded-lg p-4 hover:bg-orange-50 transition-all duration-300 border-l-4 border-orange-500">
+                    <p class="text-gray-800 text-sm leading-relaxed mb-1">
+                        C. Estelle Smith, Alemitu Bezabih, and <strong>Shadi Nourriz</strong>. On the Challenges of Implementing Online Spiritual Care Communities (OSCCs) in Collaboration with Diverse Healthcare Teams. Paper for CHI 2024 Workshop: Conducting Research at the Intersection of HCI and Health: Building and Supporting Teams with Diverse Expertise to Increase Public Health Impact. Honolulu, Hawaii. May 2024 
+                        <em><strong>CHI 2024 Workshop.</strong></em>
+                    </p>
+                    <a href="https://estellesmithphd.com/wp-content/uploads/2024/04/on-the-challenges-of-implementing-online-spiritual-care-communities-osccs-in-collaboration-with-diverse-healthcare-teams.pdf" class="text-blue-600 hover:text-blue-800 text-sm font-medium">🔗 link</a>
+                </div>
+
+                <!-- Publication 4 -->
+                <div class="bg-gray-50 rounded-lg p-4 hover:bg-yellow-50 transition-all duration-300 border-l-4 border-yellow-500">
+                    <p class="text-gray-800 text-sm leading-relaxed mb-1">
+                        <strong>Shadi Nourriz</strong>, Alemitu Bezabih, and C. Estelle Smith. On the Design Risks of Empathy Fatigue. Paper for CHI 2024 Workshop: Empathy-Centric Design: Scrutinizing Empathy Beyond the Individual. Honolulu, Hawaii. May 2024. 
+                        <em><strong>CHI 2024 Workshop.</strong></em>
+                    </p>
+                    <a href="https://dl.acm.org/doi/10.1145/3661790.3661798" class="text-blue-600 hover:text-blue-800 text-sm font-medium">📄 ACM DL</a>
+                </div>
+
+                <!-- Publication 5 -->
+                <div class="bg-gray-50 rounded-lg p-4 hover:bg-purple-50 transition-all duration-300 border-l-4 border-purple-500">
+                    <p class="text-gray-800 text-sm leading-relaxed mb-1">
+                        Alemitu Bezabih, <strong>Shadi Nourriz</strong>, and C. Estelle Smith. 
+                        Toward LLM-Powered Social Robots for Supporting Sensitive Disclosures of Stigmatized Health Conditions. 
+                        <em><strong>HRI 2024 Workshop.</strong></em>
+                    </p>
+                    <a href="https://estellesmithphd.com/wp-content/uploads/2024/03/hri2024-hiv-workshop.pdf" class="text-blue-600 hover:text-blue-800 text-sm font-medium">🔗 link</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-6 lg:px-12 text-center">
+            <h2 class="text-3xl md:text-3xl font-bold mb-5">
+                Let's <span class="gradient-text">Connect</span>
+            </h2>
+            <p class="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">
+                Interested in collaboration or just want to chat? Feel free to reach out!
+            </p>
+            
+            <div class="flex flex-wrap justify-center gap-3">
+                <a href="mailto:shadinourriz@mines.edu" class="px-6 py-3 text-white rounded-lg font-medium hover:opacity-90 inline-flex items-center gap-2 text-sm transition-all" style="background-color: #1c4587;">
+                    <i class="fas fa-envelope"></i>
+                    Email Me
+                </a>
+                <a href="https://www.linkedin.com/in/shadi-nourriz/" class="px-6 py-3 bg-gray-100 text-gray-800 rounded-lg font-medium hover:bg-gray-200 inline-flex items-center gap-2 text-sm transition-all">
+                    <i class="fab fa-linkedin"></i>
+                    LinkedIn
+                </a>
+                <a href="https://github.com/ShadiNrz" class="px-6 py-3 bg-gray-100 text-gray-800 rounded-lg font-medium hover:bg-gray-200 inline-flex items-center gap-2 text-sm transition-all">
+                    <i class="fab fa-github"></i>
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 text-white" style="background-color: #0c2e66;">
+        <div class="max-w-4xl mx-auto px-6 lg:px-12">
+            <div class="text-center">
+                <div class="text-gray-400 text-sm">
+                    Made with ❤️ by ShadiNourriz
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+    
+    <!-- EMBEDDED JAVASCRIPT - READ MORE FUNCTIONALITY -->
+    <script>
+        console.log('🚀 Script loaded!');
+        
+        // Wait for everything to load
+        window.addEventListener('load', function() {
+            console.log('✅ Page loaded!');
+            
+            // Find all Read More buttons
+            const buttons = document.querySelectorAll('.read-more-btn');
+            console.log('📍 Found ' + buttons.length + ' Read More buttons');
+            
+            // Add click to each button
+            buttons.forEach(function(button, index) {
+                console.log('⚙️ Setting up button #' + (index + 1));
+                
+                button.style.cursor = 'pointer';
+                
+                button.addEventListener('click', function(e) {
+                    console.log('🎯 BUTTON CLICKED! Button #' + (index + 1));
+                    
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    // Find parent card
+                    const card = this.closest('.research-card-content');
+                    console.log('📦 Found card:', card ? 'YES' : 'NO');
+                    
+                    if (!card) {
+                        console.error('❌ Could not find card!');
+                        return;
+                    }
+                    
+                    // Find description
+                    const description = card.querySelector('.research-card-description');
+                    console.log('📝 Found description:', description ? 'YES' : 'NO');
+                    
+                    if (!description) {
+                        console.error('❌ Could not find description!');
+                        return;
+                    }
+                    
+                    // Toggle
+                    if (description.classList.contains('expanded')) {
+                        console.log('⬇️ COLLAPSING...');
+                        description.classList.remove('expanded');
+                        this.innerHTML = 'Read more →';
+                    } else {
+                        console.log('⬆️ EXPANDING...');
+                        description.classList.add('expanded');
+                        this.innerHTML = 'Show less ←';
+                    }
+                });
+            });
+            
+            console.log('✨ Read More setup complete!');
+        });
+    </script>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="fixed bottom-6 right-6 text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 opacity-0 pointer-events-none z-50" style="background-color: #1c4587;">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+        </svg>
+    </button>
+
+    <style>
+        #scrollToTop.show {
+            opacity: 1 !important;
+            pointer-events: auto !important;
+            animation: bounceIn 0.5s ease-out;
+        }
+
+        #scrollToTop:hover {
+            transform: translateY(-3px) scale(1.05);
+            background-color: #3b8ad9 !important;
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0) translateY(20px);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.15) translateY(-3px);
+            }
+            100% {
+                transform: scale(1) translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+
+    <script>
+        // Scroll to Top functionality
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+        
+        // Show button when scrolled down
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('show');
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+        });
+        
+        // Smooth scroll to top when clicked
+        scrollToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
