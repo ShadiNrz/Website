@@ -1,0 +1,15 @@
+Figures extracted without alteration from author-posted PDFs for the author's research portfolio.
+
+care-loop.png
+Figure 4, The Care Loop Model (page 21).
+Alemitu Bezabih, Shadi Nourriz, Anne-Marie Snider, Rosalie Rauenzahn, George Handzo, and C. Estelle Smith.
+Meeting Patients Where They're At: Toward the Expansion of Chaplaincy Care into Online Spiritual Care Communities. CSCW 2025.
+https://estellesmithphd.com/wp-content/uploads/2025/08/cscw2025-onlinespiritualcarecommunities.pdf
+
+bot-response.png
+Figure 2, Example of the bot's comment responding to a post with relevant paper recommendations (page 3).
+Shadi Nourriz, Rui Zhang, and C. Estelle Smith.
+Stay Ahead: Designing a Community-Driven, AI-Powered Bot for Predicting Academic Paper Impact and Enhancing Multi-User Engagement. Collective Intelligence 2025, Poster and Demo Track.
+https://ci.acm.org/2025/wp-content/uploads/99-Nourriz.pdf
+
+These images are paper figures, not generated illustrations. The bot screenshot is presented in a cropped viewport as a thumbnail; opening the image displays the full original figure. Original author and third-party rights are retained.

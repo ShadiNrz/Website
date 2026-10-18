@@ -1061,31 +1061,13 @@ p {
   font-family: "DejaVu Sans", sans-serif;
 }
 
-/* Compact, text-first research cards with small licensed illustrations. */
+/* Research-first cards with optional previews extracted from the source papers. */
 .research-grid {
   gap: 16px;
 }
 .research-card {
-  display: grid;
-  grid-template-columns: 124px minmax(0, 1fr);
-  gap: 28px;
-  padding: 26px;
-  align-items: start;
-}
-.research-thumbnail {
-  display: grid;
-  place-items: center;
-  width: 124px;
-  height: 112px;
-  background: #edf3fc;
-  border: 1px solid #d7e3f5;
-  border-radius: 12px;
-}
-.research-thumbnail img {
   display: block;
-  width: 64px;
-  height: 64px;
-  object-fit: contain;
+  padding: 26px 28px;
 }
 .research-copy {
   padding: 0;
@@ -1117,30 +1099,53 @@ p {
 .project-facts span {
   margin-inline: 5px;
 }
-.image-credit {
-  margin: 17px 0 0;
-  font-size: 11px;
-  line-height: 1.7;
-  color: var(--muted);
+.with-paper-figure {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: 30px;
+  align-items: start;
 }
-.image-credit a {
+.paper-preview {
+  margin: 0;
+}
+.paper-image-link {
+  display: block;
+  height: 126px;
+  overflow: hidden;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+}
+.paper-image-link:hover {
+  border-color: var(--blue);
+}
+.paper-preview img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.paper-preview img[src*="bot-response"] {
+  object-fit: cover;
+  object-position: center 44%;
+}
+.paper-preview figcaption {
+  font-size: 10px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-top: 8px;
+}
+.paper-preview figcaption a {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 @media (max-width: 760px) {
   .research-card {
-    grid-template-columns: 64px minmax(0, 1fr);
-    gap: 16px;
-    padding: 18px;
+    padding: 20px;
   }
-  .research-thumbnail {
-    width: 64px;
-    height: 68px;
-    border-radius: 10px;
-  }
-  .research-thumbnail img {
-    width: 44px;
-    height: 44px;
+  .with-paper-figure {
+    grid-template-columns: 1fr;
+    gap: 18px;
   }
   .research-copy h3 {
     font-size: 18px;
@@ -1164,18 +1169,10 @@ p {
   .research-copy > .project-facts {
     font-size: 11px;
   }
-}
-@media (max-width: 420px) {
-  .research-card {
-    grid-template-columns: 1fr;
-    gap: 13px;
+  .paper-preview {
+    max-width: 240px;
   }
-  .research-thumbnail {
-    width: 56px;
-    height: 56px;
-  }
-  .research-thumbnail img {
-    width: 38px;
-    height: 38px;
+  .paper-image-link {
+    height: 125px;
   }
 }
