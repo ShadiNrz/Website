@@ -1,0 +1,13 @@
+Research card visuals
+
+peer-support-example.png: extracted unchanged from Figure 3 of Meeting Patients Where They're At (Bezabih, Nourriz, Snider, Rauenzahn, Handzo, and Smith; CSCW 2025). Shown as related published work, not as a visualization of the current computational project's dataset. Original figure already masks usernames.
+https://estellesmithphd.com/wp-content/uploads/2025/08/cscw2025-onlinespiritualcarecommunities.pdf
+
+survey-traces.svg: original code-drawn conceptual illustration, informed by the visual reference supplied by Shadi (dylantao.github.io). Not copied source code or an exported image; no measured survey results or statistical claims are represented.
+
+browser-privacy-controls.png: Firefox content-blocking settings screenshot from MDN Web Docs, contributors to mdn/content. Copied unchanged; the thumbnail uses a clipped viewport. Reference image, not a screenshot from Shadi's study.
+Source (pinned revision): https://github.com/mdn/content/blob/a1aa79c09717761fc72c20bac94bb9c430ed487a/files/en-us/web/privacy/guides/firefox_tracking_protection/content_blocking.png
+Documentation: https://developer.mozilla.org/en-US/docs/Web/Privacy/Guides/Firefox_tracking_protection
+MDN content license: Creative Commons Attribution-ShareAlike 2.5. See MDN-LICENSE.md and https://creativecommons.org/licenses/by-sa/2.5/
+
+The two other card previews are source-paper figures credited individually in ../paper-figures/CREDITS.txt. Original author and third-party rights are retained.

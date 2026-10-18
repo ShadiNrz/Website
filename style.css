@@ -1176,3 +1176,17 @@ p {
     height: 125px;
   }
 }
+
+.image-credit {
+  margin: 15px 0 0;
+  font-size: 11px;
+  color: var(--muted);
+}
+.image-credit a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.paper-preview img[src*="browser-privacy-controls"] {
+  object-fit: cover;
+  object-position: center top;
+}
