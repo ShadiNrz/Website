@@ -11,3 +11,7 @@ Documentation: https://developer.mozilla.org/en-US/docs/Web/Privacy/Guides/Firef
 MDN content license: Creative Commons Attribution-ShareAlike 2.5. See MDN-LICENSE.md and https://creativecommons.org/licenses/by-sa/2.5/
 
 The two other card previews are source-paper figures credited individually in ../paper-figures/CREDITS.txt. Original author and third-party rights are retained.
+
+Current first-card image: conversation-network.svg is an original code-drawn schematic of branching replies. No actual participant records or measured network statistics are depicted. It replaces the previously used peer-support screenshot.
+
+Current bot-card image: CSSpark Bot's original Reddit avatar, shown in a CSS-cropped viewport of the existing SparkBotProfil.png supplied with Shadi's original repository. The source file is unaltered. It replaces the bot-response paper screenshot.
