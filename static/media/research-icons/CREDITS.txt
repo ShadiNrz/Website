@@ -1,0 +1,27 @@
+OpenMoji research-card illustrations
+
+Source: https://github.com/hfg-gmuend/openmoji
+License: Creative Commons Attribution-ShareAlike 4.0 International
+https://creativecommons.org/licenses/by-sa/4.0/
+Illustrations copied without modification. CSS controls display size only.
+
+conversation.svg — speech balloon
+Designer: Laura Humpfer
+Source: https://github.com/hfg-gmuend/openmoji/blob/master/color/svg/1F4AC.svg
+
+care.svg — heart hands
+Designer: Alan Seng
+Source: https://github.com/hfg-gmuend/openmoji/blob/master/color/svg/1FAF6.svg
+
+survey.svg — clipboard
+Designer: Sina Schulz
+Source: https://github.com/hfg-gmuend/openmoji/blob/master/color/svg/1F4CB.svg
+
+community-bot.svg — robot
+Designer: Mariella Steeb
+Source: https://github.com/hfg-gmuend/openmoji/blob/master/color/svg/1F916.svg
+
+security.svg — locked
+Designer: Lisa Schulz
+Source: https://github.com/hfg-gmuend/openmoji/blob/master/color/svg/1F512.svg
+
