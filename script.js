@@ -1,120 +1,89 @@
-/* =================================
-   SUPER SIMPLE - GUARANTEED TO WORK
-   ================================= */
+"use strict";
 
-// Wait for page to load
-window.addEventListener('load', function() {
-    console.log('Page loaded - setting up Read More buttons...');
-    
-    // Get all Read More buttons
-    const buttons = document.querySelectorAll('.read-more-btn');
-    console.log('Found ' + buttons.length + ' buttons');
-    
-    // Add click handler to each button
-    buttons.forEach(function(button, index) {
-        console.log('Setting up button ' + (index + 1));
-        
-        button.onclick = function() {
-            console.log('BUTTON CLICKED!');
-            
-            // Find the text description
-            const card = this.closest('.research-card-content');
-            const text = card.querySelector('.research-card-description');
-            
-            console.log('Found card:', card);
-            console.log('Found text:', text);
-            
-            // Check if expanded
-            const isExpanded = text.classList.contains('expanded');
-            
-            if (isExpanded) {
-                // COLLAPSE
-                console.log('Collapsing...');
-                text.classList.remove('expanded');
-                this.innerHTML = 'Read more →';
-            } else {
-                // EXPAND
-                console.log('Expanding...');
-                text.classList.add('expanded');
-                this.innerHTML = 'Show less ←';
-            }
-        };
-    });
-});
+const menuButton = document.querySelector(".menu-toggle");
+const navigation = document.querySelector("#nav-links");
+const navigationLinks = [...navigation.querySelectorAll('a[href^="#"]')];
 
-// ===== Mobile Menu Toggle =====
-window.addEventListener('load', function() {
-    const mobileBtn = document.getElementById('mobile-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    
-    if (mobileBtn && mobileMenu) {
-        mobileBtn.onclick = function() {
-            mobileMenu.classList.toggle('hidden');
-        };
-    }
-});
-
-// ===== Smooth Scrolling =====
-window.addEventListener('load', function() {
-    const links = document.querySelectorAll('a[href^="#"]');
-    links.forEach(function(link) {
-        // Skip read-more buttons
-        if (link.classList.contains('read-more-btn')) return;
-        
-        link.onclick = function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth' });
-            }
-        };
-    });
-});
-
-// ===== Fade In Animation =====
-window.addEventListener('load', function() {
-    const elements = document.querySelectorAll('.animate-fadeInUp');
-    elements.forEach(function(el) {
-        el.style.opacity = '1';
-    });
-});
-
-// ===== Active Navigation - PERFECT FIX =====
-function updateActiveLink() {
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('nav a[href^="#"]');
-    
-    let current = '';
-    
-    // Check if at the TOP of page (or just refreshed)
-    if (window.pageYOffset < 100) {
-        current = 'about';
-    }
-    // Check if at the BOTTOM of page
-    else if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 50) {
-        current = 'contact';
-    }
-    // Otherwise, check which section we're in
-    else {
-        sections.forEach(function(section) {
-            const sectionTop = section.offsetTop;
-            if (window.pageYOffset >= (sectionTop - 200)) {
-                current = section.getAttribute('id');
-            }
-        });
-    }
-    
-    // Update active link
-    navLinks.forEach(function(link) {
-        link.classList.remove('active-link');
-        if (link.getAttribute('href') === '#' + current) {
-            link.classList.add('active-link');
-        }
-    });
+function closeMenu() {
+  menuButton.setAttribute("aria-expanded", "false");
+  navigation.classList.remove("open");
 }
 
-// Run on scroll
-window.addEventListener('scroll', updateActiveLink);
+menuButton.addEventListener("click", () => {
+  const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+  menuButton.setAttribute("aria-expanded", String(!isOpen));
+  navigation.classList.toggle("open", !isOpen);
+});
 
-// Run on page load to show "About Me" active immediately
-window.addEventListener('load', updateActiveLink);
+navigationLinks.forEach((link) => link.addEventListener("click", closeMenu));
+document.addEventListener("keydown", (event) => {
+  if (
+    event.key === "Escape" &&
+    menuButton.getAttribute("aria-expanded") === "true"
+  ) {
+    closeMenu();
+    menuButton.focus();
+  }
+});
+document.addEventListener("click", (event) => {
+  if (!event.target.closest(".nav")) closeMenu();
+});
+window.matchMedia("(min-width: 761px)").addEventListener("change", closeMenu);
+
+const sections = [...document.querySelectorAll("main > section[id]")];
+let scrollPending = false;
+function updateNavigation() {
+  let activeId = sections[0].id;
+  for (const section of sections) {
+    if (section.getBoundingClientRect().top <= 150) activeId = section.id;
+  }
+  if (
+    window.innerHeight + window.scrollY >=
+    document.documentElement.scrollHeight - 5
+  ) {
+    activeId = sections[sections.length - 1].id;
+  }
+  navigationLinks.forEach((link) => {
+    const active = link.hash === `#${activeId}`;
+    link.classList.toggle("active", active);
+    if (active) link.setAttribute("aria-current", "location");
+    else link.removeAttribute("aria-current");
+  });
+  scrollPending = false;
+}
+window.addEventListener(
+  "scroll",
+  () => {
+    if (!scrollPending) {
+      scrollPending = true;
+      window.requestAnimationFrame(updateNavigation);
+    }
+  },
+  { passive: true },
+);
+window.addEventListener("resize", updateNavigation);
+updateNavigation();
+
+const filters = [...document.querySelectorAll(".filter")];
+const publications = [...document.querySelectorAll(".publication")];
+filters.forEach((button) => {
+  button.addEventListener("click", () => {
+    filters.forEach((filter) => {
+      const selected = filter === button;
+      filter.classList.toggle("active", selected);
+      filter.setAttribute("aria-pressed", String(selected));
+    });
+    let visibleCount = 0;
+    publications.forEach((publication) => {
+      const visible =
+        button.dataset.filter === "all" ||
+        publication.dataset.year === button.dataset.filter;
+      publication.hidden = !visible;
+      if (visible) visibleCount += 1;
+    });
+    document.querySelector("#publication-count").textContent =
+      `${visibleCount} publications shown.`;
+  });
+});
+
+document.querySelector("#year").textContent = String(new Date().getFullYear());
